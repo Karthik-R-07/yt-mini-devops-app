@@ -1,85 +1,94 @@
 body {
-  margin:0;
-  font-family:'Segoe UI',sans-serif;
-  background:#0f0f0f;
-  color:white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
 }
 
 .topbar {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px 20px;
-  background:#181818;
-  position:sticky;
-  top:0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #202020;
+  padding: 10px 20px;
 }
 
-.logo {
-  font-size:22px;
-  font-weight:bold;
-  color:red;
+.topbar input {
+  padding: 8px;
+  width: 300px;
+  border-radius: 20px;
+  border: none;
 }
 
-input {
-  padding:8px;
-  border-radius:20px;
-  border:none;
-  width:250px;
+.container {
+  display: flex;
 }
 
-.section h2 {
-  margin-left:20px;
-  font-weight:500;
+.sidebar {
+  width: 200px;
+  background: #181818;
+  padding: 15px;
 }
 
-.row {
-  display:flex;
-  gap:15px;
-  overflow-x:auto;
-  padding:10px 20px;
+.sidebar p {
+  margin: 15px 0;
+  cursor: pointer;
 }
 
-.card {
-  min-width:200px;
-  border-radius:12px;
-  overflow:hidden;
-  transition:.3s;
-  cursor:pointer;
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  flex: 1;
 }
 
-.card img {
-  width:100%;
-  border-radius:12px;
+.video-card {
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-.card:hover {
-  transform:scale(1.1);
-  box-shadow:0 10px 20px rgba(0,0,0,.6);
+.video-card:hover {
+  transform: scale(1.05);
 }
 
-/* Modal */
+.video-card img {
+  width: 100%;
+}
+
+.video-info {
+  padding: 10px;
+}
+
 .modal {
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,.8);
-  justify-content:center;
-  align-items:center;
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
-  width:60%;
-  background:#111;
-  padding:20px;
-  border-radius:10px;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
 }
 
-#closeBtn {
-  float:right;
-  font-size:24px;
-  cursor:pointer;
+.modal iframe {
+  width: 100%;
+  height: 450px;
+}
+
+#closeModal {
+  position: absolute;
+  right: 10px;
+  top: -30px;
+  font-size: 30px;
+  cursor: pointer;
 }

@@ -1,38 +1,51 @@
-const videosByCategory = {
-  anime: ["aqz-KE-bpKQ"],
-  movies: ["dQw4w9WgXcQ"],
-  sports: ["5qap5aO4i9A"],
-  series: ["M7lc1UVf-VE"]
-};
+const videos = [
+  { title: "Anime Battle", id: "z4x4pbn0gR0" },
+  { title: "Avengers Trailer", id: "TcMBFSGVi1c" },
+  { title: "Football Skills", id: "1Roy4o4tqQM" },
+  { title: "Web Series Scene", id: "8ugaeA-nMTc" }
+];
 
-function createCards(category) {
-  const container = document.getElementById(category);
-  videosByCategory[category].forEach(id => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `<img src="https://source.unsplash.com/300x450/?${category}">`;
-    card.onclick = () => openModal(id);
-    container.appendChild(card);
-  });
+const videoContainer = document.getElementById("videos");
+const modal = document.getElementById("videoModal");
+const player = document.getElementById("videoPlayer");
+const closeModal = document.getElementById("closeModal");
+const searchInput = document.getElementById("searchInput");
+
+function displayVideos(filter = "") {
+  videoContainer.innerHTML = "";
+  videos
+    .filter(v => v.title.toLowerCase().includes(filter.toLowerCase()))
+    .forEach(video => {
+      const card = document.createElement("div");
+      card.className = "video-card";
+      card.innerHTML = `
+        <img src="https://img.youtube.com/vi/${video.id}/0.jpg">
+        <div class="video-info">
+          <h4>${video.title}</h4>
+        </div>
+      `;
+      card.onclick = () => openVideo(video.id);
+      videoContainer.appendChild(card);
+    });
 }
 
-Object.keys(videosByCategory).forEach(createCards);
-
-function openModal(videoId){
-  document.getElementById("videoModal").style.display = "flex";
-  document.getElementById("ytplayer").src =
-    `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+function openVideo(id) {
+  player.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+  modal.style.display = "flex";
 }
 
-document.getElementById("closeBtn").onclick = () => {
-  document.getElementById("videoModal").style.display = "none";
-  document.getElementById("ytplayer").src = "";
+closeModal.onclick = () => {
+  modal.style.display = "none";
+  player.src = "";
 };
 
-// Search filter
-document.getElementById("search").addEventListener("input", function() {
-  let term = this.value.toLowerCase();
-  document.querySelectorAll(".card").forEach(card => {
-    card.style.display = card.innerText.toLowerCase().includes(term) ? "block" : "none";
-  });
-});
+window.onclick = e => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    player.src = "";
+  }
+};
+
+searchInput.addEventListener("input", e => displayVideos(e.target.value));
+
+displayVideos();
