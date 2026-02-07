@@ -1,9 +1,14 @@
 const videos = [
   { title: "Big Buck Bunny", src: "https://www.w3schools.com/html/mov_bbb.mp4", category: "movies" },
-  { title: "Nature Clip", src: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4", category: "series" },
-  { title: "Ocean View", src: "https://samplelib.com/lib/preview/mp4/sample-10s.mp4", category: "sports" },
-  { title: "Mountain Timelapse", src: "https://samplelib.com/lib/preview/mp4/sample-15s.mp4", category: "anime" },
-  { title: "City Night", src: "https://samplelib.com/lib/preview/mp4/sample-20s.mp4", category: "trending" }
+  { title: "Nature Short", src: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4", category: "movies" },
+  { title: "Ocean Clip", src: "https://samplelib.com/lib/preview/mp4/sample-10s.mp4", category: "series" },
+  { title: "Mountain View", src: "https://samplelib.com/lib/preview/mp4/sample-15s.mp4", category: "series" },
+  { title: "Sports Action", src: "https://samplelib.com/lib/preview/mp4/sample-20s.mp4", category: "sports" },
+  { title: "Football Clip", src: "https://samplelib.com/lib/preview/mp4/sample-30s.mp4", category: "sports" },
+  { title: "Fantasy Scene", src: "https://samplelib.com/lib/preview/mp4/sample-5mb.mp4", category: "anime" },
+  { title: "Adventure Clip", src: "https://samplelib.com/lib/preview/mp4/sample-10mb.mp4", category: "anime" },
+  { title: "City Timelapse", src: "https://samplelib.com/lib/preview/mp4/sample-15mb.mp4", category: "trending" },
+  { title: "Night Sky", src: "https://samplelib.com/lib/preview/mp4/sample-20mb.mp4", category: "trending" }
 ];
 
 const container = document.getElementById("videos");
@@ -22,7 +27,7 @@ function displayVideos(filter = "", category = "") {
       const card = document.createElement("div");
       card.className = "video-card";
       card.innerHTML = `
-        <img src="https://source.unsplash.com/400x250/?${video.category},video">
+        <img src="https://picsum.photos/400/250?random=${Math.floor(Math.random()*1000)}">
         <div class="video-info"><h4>${video.title}</h4></div>
       `;
       card.onclick = () => openVideo(video.src);
