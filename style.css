@@ -1,0 +1,97 @@
+body {
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  background:linear-gradient(120deg,#141e30,#243b55);
+  color:white;
+}
+
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 25px;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.4);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.logo { font-size:22px; font-weight:bold; }
+
+.topbar input {
+  padding:8px 15px;
+  border-radius:20px;
+  border:none;
+  width:300px;
+  outline:none;
+}
+
+.user {
+  font-size:22px;
+  cursor:pointer;
+}
+
+.container { display:flex; }
+
+.sidebar {
+  width:200px;
+  padding:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  height:100vh;
+}
+
+.sidebar p {
+  margin:15px 0;
+  padding:8px;
+  border-radius:8px;
+  transition:.3s;
+  cursor:pointer;
+}
+
+.sidebar p:hover {
+  background:rgba(255,255,255,0.2);
+}
+
+.videos {
+  flex:1;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.card {
+  position:relative;
+  background:rgba(255,255,255,0.05);
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.4);
+  transition:transform .3s;
+}
+
+.card:hover {
+  transform:scale(1.05);
+}
+
+.card img { width:100%; display:block; }
+
+.overlay {
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  transition:.3s;
+  font-size:40px;
+}
+
+.card:hover .overlay { opacity:1; }
+
+.card p {
+  padding:10px;
+}
