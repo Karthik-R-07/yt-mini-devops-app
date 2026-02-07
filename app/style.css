@@ -8,19 +8,11 @@ body {
 .topbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background: #141414;
   padding: 12px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  background: #141414;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #ff0000;
-}
+.logo { color: #ff0000; font-weight: bold; }
 
 .search-box {
   display: flex;
@@ -31,16 +23,14 @@ body {
 }
 
 .search-box input {
-  border: none;
   background: transparent;
+  border: none;
   color: white;
   margin-left: 8px;
   outline: none;
 }
 
-.container {
-  display: flex;
-}
+.container { display: flex; }
 
 .sidebar {
   width: 220px;
@@ -51,11 +41,6 @@ body {
 .sidebar p {
   margin: 15px 0;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-.sidebar p:hover {
-  color: #ff0000;
 }
 
 .videos {
@@ -73,46 +58,35 @@ body {
   transition: 0.3s;
 }
 
-.video-card:hover {
-  transform: scale(1.05);
-}
+.video-card:hover { transform: scale(1.05); }
 
 .video-card img {
   width: 100%;
-  height: 150px;
+  height: 160px;
   object-fit: cover;
 }
 
-.video-info {
-  padding: 10px;
-}
+.video-info { padding: 10px; }
 
 .modal {
   display: none;
   position: fixed;
   z-index: 100;
-  left: 0; top: 0;
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.85);
   justify-content: center;
   align-items: center;
 }
 
-.modal-content {
-  width: 85%;
-  max-width: 900px;
-  position: relative;
-}
+.modal-content { width: 80%; max-width: 900px; }
 
-.modal iframe {
+.modal video {
   width: 100%;
-  height: 500px;
+  max-height: 500px;
 }
 
 #closeModal {
-  position: absolute;
-  right: 10px;
-  top: -35px;
-  font-size: 32px;
+  float: right;
+  font-size: 30px;
   cursor: pointer;
 }

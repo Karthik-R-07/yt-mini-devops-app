@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>MiniTube Pro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -16,30 +16,27 @@
   <div class="logo">🎬 MiniTube Pro</div>
   <div class="search-box">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <input type="text" id="searchInput" placeholder="Search videos..." />
+    <input type="text" id="searchInput" placeholder="Search videos...">
   </div>
 </header>
 
 <div class="container">
   <aside class="sidebar">
-    <p><i class="fa-solid fa-house"></i> Home</p>
-    <p><i class="fa-solid fa-fire"></i> Trending</p>
-    <p><i class="fa-solid fa-film"></i> Movies</p>
-    <p><i class="fa-solid fa-tv"></i> Series</p>
-    <p><i class="fa-solid fa-futbol"></i> Sports</p>
-    <p><i class="fa-solid fa-dragon"></i> Anime</p>
+    <p data-cat=""><i class="fa-solid fa-house"></i> Home</p>
+    <p data-cat="trending"><i class="fa-solid fa-fire"></i> Trending</p>
+    <p data-cat="movies"><i class="fa-solid fa-film"></i> Movies</p>
+    <p data-cat="series"><i class="fa-solid fa-tv"></i> Series</p>
+    <p data-cat="sports"><i class="fa-solid fa-futbol"></i> Sports</p>
+    <p data-cat="anime"><i class="fa-solid fa-dragon"></i> Anime</p>
   </aside>
 
   <main class="videos" id="videos"></main>
 </div>
 
-<!-- Video Player Modal -->
 <div class="modal" id="videoModal">
   <div class="modal-content">
     <span id="closeModal">&times;</span>
-    <iframe id="videoPlayer"
-      allow="autoplay; encrypted-media"
-      allowfullscreen></iframe>
+    <video id="videoPlayer" controls autoplay></video>
   </div>
 </div>
 
