@@ -2,35 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MiniTube Pro</title>
+  <title>MiniFlix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="topbar">
-  <div class="logo">🎬 MiniTube Pro</div>
-  <div class="search-box">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <input type="text" id="searchInput" placeholder="Search videos...">
-  </div>
+<header class="navbar">
+  <div class="logo">MiniFlix</div>
+  <input type="text" id="searchInput" placeholder="Search...">
 </header>
 
-<div class="container">
-  <aside class="sidebar">
-    <p data-cat=""><i class="fa-solid fa-house"></i> Home</p>
-    <p data-cat="trending"><i class="fa-solid fa-fire"></i> Trending</p>
-    <p data-cat="movies"><i class="fa-solid fa-film"></i> Movies</p>
-    <p data-cat="series"><i class="fa-solid fa-tv"></i> Series</p>
-    <p data-cat="sports"><i class="fa-solid fa-futbol"></i> Sports</p>
-    <p data-cat="anime"><i class="fa-solid fa-dragon"></i> Anime</p>
-  </aside>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Featured Trailer</h1>
+    <button onclick="openVideo(videos[0].src)">▶ Play</button>
+  </div>
+</section>
 
-  <main class="videos" id="videos"></main>
-</div>
+<div id="content"></div>
 
 <div class="modal" id="videoModal">
   <div class="modal-content">
