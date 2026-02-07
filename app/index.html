@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MiniTube</title>
+  <title>MiniTube Pro</title>
 
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -14,28 +13,32 @@
 <body>
 
 <header class="topbar">
-  <div class="logo">🎬 MiniTube</div>
-  <input type="text" id="searchInput" placeholder="Search videos..." />
+  <div class="logo">🎬 MiniTube Pro</div>
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="searchInput" placeholder="Search videos..." />
+  </div>
 </header>
 
 <div class="container">
   <aside class="sidebar">
     <p><i class="fa-solid fa-house"></i> Home</p>
     <p><i class="fa-solid fa-fire"></i> Trending</p>
-    <p><i class="fa-solid fa-tv"></i> Web Series</p>
     <p><i class="fa-solid fa-film"></i> Movies</p>
+    <p><i class="fa-solid fa-tv"></i> Series</p>
     <p><i class="fa-solid fa-futbol"></i> Sports</p>
+    <p><i class="fa-solid fa-dragon"></i> Anime</p>
   </aside>
 
   <main class="videos" id="videos"></main>
 </div>
 
-<!-- Video Modal -->
+<!-- Video Player Modal -->
 <div class="modal" id="videoModal">
   <div class="modal-content">
     <span id="closeModal">&times;</span>
-    <iframe id="videoPlayer" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    <iframe id="videoPlayer"
+      allow="autoplay; encrypted-media"
       allowfullscreen></iframe>
   </div>
 </div>

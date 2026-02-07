@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #111;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d0d0d;
   color: white;
 }
 
@@ -9,15 +9,33 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #202020;
-  padding: 10px 20px;
+  background: #141414;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.topbar input {
-  padding: 8px;
-  width: 300px;
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #222;
+  padding: 8px 12px;
   border-radius: 20px;
+}
+
+.search-box input {
   border: none;
+  background: transparent;
+  color: white;
+  margin-left: 8px;
+  outline: none;
 }
 
 .container {
@@ -25,30 +43,34 @@ body {
 }
 
 .sidebar {
-  width: 200px;
-  background: #181818;
+  width: 220px;
+  background: #111;
   padding: 15px;
 }
 
 .sidebar p {
   margin: 15px 0;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar p:hover {
+  color: #ff0000;
 }
 
 .videos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 15px;
-  padding: 20px;
   flex: 1;
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
 .video-card {
-  background: #222;
+  background: #1c1c1c;
   border-radius: 10px;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
 .video-card:hover {
@@ -57,6 +79,8 @@ body {
 
 .video-card img {
   width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
 .video-info {
@@ -69,26 +93,26 @@ body {
   z-index: 100;
   left: 0; top: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
   justify-content: center;
   align-items: center;
 }
 
 .modal-content {
-  width: 80%;
-  max-width: 800px;
+  width: 85%;
+  max-width: 900px;
   position: relative;
 }
 
 .modal iframe {
   width: 100%;
-  height: 450px;
+  height: 500px;
 }
 
 #closeModal {
   position: absolute;
   right: 10px;
-  top: -30px;
-  font-size: 30px;
+  top: -35px;
+  font-size: 32px;
   cursor: pointer;
 }

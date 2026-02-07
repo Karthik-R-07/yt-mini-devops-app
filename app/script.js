@@ -1,31 +1,30 @@
 const videos = [
-  { title: "Anime Battle", id: "z4x4pbn0gR0" },
+  { title: "Naruto Fight Scene", id: "QczGoCmX-pI" },
   { title: "Avengers Trailer", id: "TcMBFSGVi1c" },
-  { title: "Football Skills", id: "1Roy4o4tqQM" },
-  { title: "Web Series Scene", id: "8ugaeA-nMTc" }
+  { title: "Football Highlights", id: "2Vv-BfVoq4g" },
+  { title: "Top Web Series Scene", id: "kJQP7kiw5Fk" },
+  { title: "Anime Opening", id: "dQw4w9WgXcQ" }
 ];
 
-const videoContainer = document.getElementById("videos");
+const container = document.getElementById("videos");
 const modal = document.getElementById("videoModal");
 const player = document.getElementById("videoPlayer");
 const closeModal = document.getElementById("closeModal");
 const searchInput = document.getElementById("searchInput");
 
 function displayVideos(filter = "") {
-  videoContainer.innerHTML = "";
+  container.innerHTML = "";
   videos
     .filter(v => v.title.toLowerCase().includes(filter.toLowerCase()))
     .forEach(video => {
       const card = document.createElement("div");
       card.className = "video-card";
       card.innerHTML = `
-        <img src="https://img.youtube.com/vi/${video.id}/0.jpg">
-        <div class="video-info">
-          <h4>${video.title}</h4>
-        </div>
+        <img src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg" alt="${video.title}">
+        <div class="video-info"><h4>${video.title}</h4></div>
       `;
       card.onclick = () => openVideo(video.id);
-      videoContainer.appendChild(card);
+      container.appendChild(card);
     });
 }
 
