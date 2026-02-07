@@ -1,14 +1,53 @@
 const videos = [
-  { title: "Big Buck Bunny", src: "https://www.w3schools.com/html/mov_bbb.mp4", category: "movies" },
-  { title: "Nature Short", src: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4", category: "movies" },
-  { title: "Ocean Clip", src: "https://samplelib.com/lib/preview/mp4/sample-10s.mp4", category: "series" },
-  { title: "Mountain View", src: "https://samplelib.com/lib/preview/mp4/sample-15s.mp4", category: "series" },
-  { title: "Sports Action", src: "https://samplelib.com/lib/preview/mp4/sample-20s.mp4", category: "sports" },
-  { title: "Football Clip", src: "https://samplelib.com/lib/preview/mp4/sample-30s.mp4", category: "sports" },
-  { title: "Fantasy Scene", src: "https://samplelib.com/lib/preview/mp4/sample-5mb.mp4", category: "anime" },
-  { title: "Adventure Clip", src: "https://samplelib.com/lib/preview/mp4/sample-10mb.mp4", category: "anime" },
-  { title: "City Timelapse", src: "https://samplelib.com/lib/preview/mp4/sample-15mb.mp4", category: "trending" },
-  { title: "Night Sky", src: "https://samplelib.com/lib/preview/mp4/sample-20mb.mp4", category: "trending" }
+  // 🎌 ANIME TRAILERS
+  {
+    title: "Naruto Shippuden Trailer",
+    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    thumb: "https://i.imgur.com/9qO5H0K.jpeg",
+    category: "anime"
+  },
+  {
+    title: "Attack on Titan Trailer",
+    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+    thumb: "https://i.imgur.com/WF7pK0I.jpeg",
+    category: "anime"
+  },
+
+  // 🎬 MOVIE TRAILERS
+  {
+    title: "Epic Movie Trailer",
+    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    thumb: "https://i.imgur.com/j8m8K0F.jpeg",
+    category: "movies"
+  },
+  {
+    title: "Action Movie Preview",
+    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    thumb: "https://i.imgur.com/EL9V1uM.jpeg",
+    category: "movies"
+  },
+
+  // 🌿 NATURE VIDEOS
+  {
+    title: "Beautiful Waterfall",
+    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    thumb: "https://i.imgur.com/t5nH3FQ.jpeg",
+    category: "series"
+  },
+  {
+    title: "Forest Nature Clip",
+    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    thumb: "https://i.imgur.com/9qK8ZcM.jpeg",
+    category: "series"
+  },
+
+  // 🔥 TRENDING MIX
+  {
+    title: "Cinematic Landscape",
+    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+    thumb: "https://i.imgur.com/rq8xF6V.jpeg",
+    category: "trending"
+  }
 ];
 
 const container = document.getElementById("videos");
@@ -27,7 +66,7 @@ function displayVideos(filter = "", category = "") {
       const card = document.createElement("div");
       card.className = "video-card";
       card.innerHTML = `
-        <img src="https://picsum.photos/400/250?random=${Math.floor(Math.random()*1000)}">
+        <img src="${video.thumb}" alt="${video.title}">
         <div class="video-info"><h4>${video.title}</h4></div>
       `;
       card.onclick = () => openVideo(video.src);
